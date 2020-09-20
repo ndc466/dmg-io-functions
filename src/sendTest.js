@@ -15,6 +15,9 @@ var smtpTransport = nodemailer.createTransport(
 
 app.post("/", async (req, res) => {
   const { recipient, email } = req.body;
+  console.log("executing testEmail ...");
+  res.send({ result: `Message: ${writeResult.id} added.` });
+  /* const { recipient, email } = req.body;
   let mailOptions = {
     from: "nd.corc@gmail.com",
     to: recipient,
@@ -27,7 +30,7 @@ app.post("/", async (req, res) => {
     if (error) throw new Error("Error in sending email");
     console.log("Message sent: " + JSON.stringify(response));
   });
-  res.send({ result: `Message with ID: ${writeResult.id} added.` });
+  res.send({ result: `Message: ${writeResult.id} added.` }); */
 });
 
 exports.testEmail = functions.https.onRequest(app);
