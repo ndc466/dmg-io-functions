@@ -5,5 +5,5 @@ admin.firestore().settings({ timestampsInSnapshots: true }); */
 
 const { sendTest, sendVerificationEmail } = require("./src");
 
-exports.sendTest = sendTest.sendTest;
-exports.sendVerificationEmail = sendVerificationEmail.sendVerificationEmail;
+exports.sendTest = sendTest;
+exports.sendVerificationEmail = sendVerificationEmail;
