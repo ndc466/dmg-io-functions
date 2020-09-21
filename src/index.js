@@ -1,5 +1,5 @@
 module.exports = {
-  sentTest: require("./sendTest"),
-  sendVerificatinEmail: require("./sendVerificationEmail"),
   testPrint: require("./testPrint"),
+  testEmail: require("./testEmail"),
+  sendVerificationEmail: require("./sendVerificationEmail"),
 };

@@ -1,4 +1,4 @@
-const emailStr = `
+module.exports = `
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "https://www.w3.org/TR/html4/strict.dtd">
 <html lang="en" data-kantu="1">
 
@@ -83,22 +83,11 @@ const emailStr = `
           <body>
               <div class="bodycontainer">
                   <div class="maincontent">
-                      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                          <tbody>
-                              <tr height="14px">
-                                  <td width="143"><img src="./images/dmg.io-icon.png" width="143" height="59" alt="Gmail" class="logo"></td>
-                                  <td align="right">
-                                      <font size="-1" color="#777"><b>{{fullName}} &lt;{{email}}&gt;</b></font>
-                                  </td>
-                              </tr>
-                          </tbody>
-                      </table>
-                      <hr>
                       <table width="100%" cellpadding="0" cellspacing="0" class="message" border="0">
                           <tbody>
                               <tr>
                                   <td colspan="2">
-                                      <table width="100%" cellpadding="12" cellspacing="0" border="0">
+                                      <table width="100%" cellpadding="6" cellspacing="0" border="0">
                                           <tbody>
                                               <tr>
                                                   <td>
@@ -106,7 +95,7 @@ const emailStr = `
                                                           <font size="-1"><u></u>
                                                               <div>
                                                                   <table style="background-color: #ffffff;
-                                  padding-top: 20px;
+                             
                                   color: #434245;
                                   width: 100%;
                                   border: 0;
@@ -117,24 +106,22 @@ const emailStr = `
                                                                               <td style="vertical-align: top; padding: 0">
                                                                                   <center>
                                                                                       <table id="m_5642575779037242411body" style="border: 0; border-collapse: collapse;
-                                                  margin: 10%;
+                                                                                      margin: 10% 7% 10% 10%; 
                                                   background: white;
                                                   border-radius: 8px;">
                                                                                           <tbody>
                                                                                               <tr>
-                                                                                                  <td style="width: 546px;
-                                                        vertical-align: top;
-                                                        padding-top: 32px;">
-                                                                                                      <div style="max-width: 600px; margin: 0 auto;">
+                                                                                                  <td style="width: 700px;
+                                                        vertical-align: top;">
+                                                                                                      <div style="max-width: 650px; margin: 0 auto;">
                                                                                                           <img style="
                                                           width: 90px;
-                                                          height: auto; 
                                                           margin-top:0; 
                                                           margin-right:0;
-                                                          margin-bottom:24;
+                                                          margin-bottom:12;
                                                           margin-left:0px;
                                                           padding-right:30px;
-                                                          padding-left:30px;" src="./dmg.io-icon.png" alt="logo" />
+                                                          padding-left:30px;" src="{{appIcon}}" alt="logo" />
                                                                                                           <h1 style="font-size: 30px;
                                                         padding-right: 30px;
                                                         padding-left: 30px;">
@@ -156,14 +143,13 @@ const emailStr = `
                                                         padding-left: 30px;
                                                         margin-bottom: 20px;">
                                                                                                               <img goomoji="1f4f1" data-goomoji="1f4f1" style="margin: 0 0.2ex;
-                                                          vertical-align: middle; max-height: 24px;" alt="📱" src="mobile.png" />
+                                                          vertical-align: middle; max-height: 24px;" src="{{mobileIcon}}" />
                                                                                                               <strong>From your mobile
                                                                                                                   device</strong>, tap the button below to
                                                                                                               confirm:
                                                                                                           </p>
                                                                                                           <div style="padding-right: 30px;
                                                           padding-left: 30px;
-                                                          margin-top: 40px;
                                                           margin-bottom: 30px;">
                                                                                                               <table style="width: 100%">
                                                                                                                   <tbody>

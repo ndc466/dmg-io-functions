@@ -1,23 +1,16 @@
 const functions = require("firebase-functions");
 const admin = require("firebase-admin");
-admin.initializeApp();
-admin.firestore().settings({ timestampsInSnapshots: true });
-const nodemailer = require("nodemailer");
-const Email = require("./models/Email");
-const mandrillTransport = require("nodemailer-mandrill-transport");
 const express = require("express");
 const cors = require("cors");
-
 const app = express();
-require("dotenv").config();
+
+require("sexy-require");
+const EmailService = require("$models/EmailService");
+const emailService = new EmailService();
+
+admin.initializeApp();
 
 app.use(cors({ origin: true }));
-var smtpTransport = nodemailer.createTransport(
-  mandrillTransport({ auth: { apiKey: process.env.API_KEY } })
-);
-
-app.post("/", async (req, res) =>
-  res.send(Email(req.body, smtpTransport).sendEmail(admin))
-);
+app.post("/", emailService.sendMail);
 
 exports.sendVerificationEmail = functions.https.onRequest(app);
